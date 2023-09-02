@@ -6,6 +6,8 @@ specifiers:
   '@testing-library/jest-dom': ^5.14.1
   '@testing-library/react': ^11.2.7
   '@testing-library/user-event': ^12.8.3
+  axios: ^1.5.0
+  can-ndjson-stream: ^1.0.2
   eslint: ^8.37.0
   eslint-plugin-react: ^7.32.2
   eslint-plugin-unused-imports: ^2.0.0
@@ -18,6 +20,8 @@ specifiers:
 dependencies:
   '@laufire/resist': 0.0.5
   '@laufire/utils': 2.9.2
+  axios: 1.5.0
+  can-ndjson-stream: 1.0.2
   react: 17.0.2
   react-dom: 17.0.2_react@17.0.2
   react-scripts: 5.0.1_my5tu7axt6r6gjlfzcbmjckjcy
@@ -3211,7 +3215,7 @@ packages:
     resolution: {integrity: sha512-Il80Qs2WjYlJIBNzNkK6KYqlVMTbZLXgHx2oT0pU/fjRHyEp+PEfEPY0R3WCwAGVOtauxh1hOxNgIf5bv7dQpA==}
     engines: {node: '>= 0.6'}
     dependencies:
-      mime-types: 2.1.31
+      mime-types: 2.1.35
       negotiator: 0.6.2
     dev: false
 
@@ -3536,6 +3540,16 @@ packages:
   /axe-core/4.7.2:
     resolution: {integrity: sha512-zIURGIS1E1Q4pcrMjp+nnEh+16G56eG/MUllJH8yEvw7asDo7Ac9uhC9KIH5jzpITueEZolfYglnCGIuSBz39g==}
     engines: {node: '>=4'}
+    dev: false
+
+  /axios/1.5.0:
+    resolution: {integrity: sha512-D4DdjDo5CY50Qms0qGQTTw6Q44jl7zRwY7bthds06pUGfChBCTcQs+N743eFWGEd6pRTMd6A+I87aWyFV5wiZQ==}
+    dependencies:
+      follow-redirects: 1.15.2
+      form-data: 4.0.0
+      proxy-from-env: 1.1.0
+    transitivePeerDependencies:
+      - debug
     dev: false
 
   /axobject-query/3.2.1:
@@ -3901,6 +3915,16 @@ packages:
     engines: {node: '>=10'}
     dev: false
 
+  /can-namespace/1.0.0:
+    resolution: {integrity: sha512-1sBY/SLwwcmxz3NhyVhLjt2uD/dZ7V1mII82/MIXSDn5QXnslnosJnjlP8+yTx2uTCRvw1jlFDElRs4pX7AG5w==}
+    dev: false
+
+  /can-ndjson-stream/1.0.2:
+    resolution: {integrity: sha512-//tM8wcTV42SyD1JGua7WMVftZEeTwapcHJTTe3vJwuVywXD01CJbdEkgwRYjy2evIByVJV21ZKBdSv5ygIw1w==}
+    dependencies:
+      can-namespace: 1.0.0
+    dev: false
+
   /caniuse-api/3.0.0:
     resolution: {integrity: sha512-bsTwuIg/BZZK/vreVTYYbSWoe2F+71P7K5QGEX+pT250DZbfU1MQ5prOKpPR+LL6uWKK3KMwMCAS74QB3Um1uw==}
     dependencies:
@@ -4101,7 +4125,7 @@ packages:
     resolution: {integrity: sha512-AF3r7P5dWxL8MxyITRMlORQNaOA2IkAFaTr4k7BUumjPtRpGDTZpl0Pb1XCO6JeDCBdp126Cgs9sMxqSjgYyRg==}
     engines: {node: '>= 0.6'}
     dependencies:
-      mime-db: 1.48.0
+      mime-db: 1.52.0
     dev: false
 
   /compression/1.7.4:
@@ -5479,8 +5503,8 @@ packages:
   /flatted/3.2.0:
     resolution: {integrity: sha512-XprP7lDrVT+kE2c2YlfiV+IfS9zxukiIOvNamPNsImNhXadSsQEbosItdL9bUQlCZXR13SvPk20BjWSWLA7m4A==}
 
-  /follow-redirects/1.14.1:
-    resolution: {integrity: sha512-HWqDgT7ZEkqRzBvc2s64vSZ/hfOceEol3ac/7tKwzuvEyWx3/4UegXh5oBOIotkGsObyk3xznnSRVADBgWSQVg==}
+  /follow-redirects/1.15.2:
+    resolution: {integrity: sha512-VQLG33o04KaQ8uYi2tVNbdrWp1QWxNNea+nmIB4EVM28v0hmP17z7aG1+wAkNzVq4KeXTq3221ye5qTJP91JwA==}
     engines: {node: '>=4.0'}
     peerDependencies:
       debug: '*'
@@ -5527,6 +5551,15 @@ packages:
 
   /form-data/3.0.1:
     resolution: {integrity: sha512-RHkBKtLWUVwd7SqRIvCZMEvAMoGUp0XU+seQiZejj0COz3RI3hWP4sCv3gZWWLjJTd7rGwcsF5eKZGii0r/hbg==}
+    engines: {node: '>= 6'}
+    dependencies:
+      asynckit: 0.4.0
+      combined-stream: 1.0.8
+      mime-types: 2.1.35
+    dev: false
+
+  /form-data/4.0.0:
+    resolution: {integrity: sha512-ETEklSGi5t0QMZuiXoA/Q6vcnxcLQP5vdugSpuAyi6SVGi2clPPp+xgEhuMaHC+zGgn31Kd235W35f7Hykkaww==}
     engines: {node: '>= 6'}
     dependencies:
       asynckit: 0.4.0
@@ -5927,7 +5960,7 @@ packages:
     engines: {node: '>=8.0.0'}
     dependencies:
       eventemitter3: 4.0.7
-      follow-redirects: 1.14.1
+      follow-redirects: 1.15.2
       requires-port: 1.0.0
     transitivePeerDependencies:
       - debug
@@ -7256,21 +7289,9 @@ packages:
       picomatch: 2.3.1
     dev: false
 
-  /mime-db/1.48.0:
-    resolution: {integrity: sha512-FM3QwxV+TnZYQ2aRqhlKBMHxk10lTbMt3bBkMAp54ddrNeVSfcQYOOKuGuy3Ddrm38I04If834fOUSq1yzslJQ==}
-    engines: {node: '>= 0.6'}
-    dev: false
-
   /mime-db/1.52.0:
     resolution: {integrity: sha512-sPU4uV7dYlvtWJxwwxHD0PuihVNiE7TyAbQ5SWxDCB9mUYvOgroQOwYQQOKPJ8CIbE+1ETVlOoK1UC2nU3gYvg==}
     engines: {node: '>= 0.6'}
-    dev: false
-
-  /mime-types/2.1.31:
-    resolution: {integrity: sha512-XGZnNzm3QvgKxa8dpzyhFTHmpP3l5YNusmne07VUOXxou9CqUqYa/HBy124RqtVh/O2pECas/MOcsDgpilPOPg==}
-    engines: {node: '>= 0.6'}
-    dependencies:
-      mime-db: 1.48.0
     dev: false
 
   /mime-types/2.1.35:
@@ -8629,6 +8650,10 @@ packages:
       ipaddr.js: 1.9.1
     dev: false
 
+  /proxy-from-env/1.1.0:
+    resolution: {integrity: sha512-D+zkORCbA9f1tdWRK0RaCR3GPv50cMxcrz4X8k5LTSUD1Dkw47mKJEZQNunItRTkWwgtaUSo1RVFRIG9ZXiFYg==}
+    dev: false
+
   /psl/1.8.0:
     resolution: {integrity: sha512-RIdOzyoavK+hA18OGGWDqUTsCLhtA7IcZ/6NCs4fFJaHBDab+pDDmDIByWFRQJq2Cd7r1OoQxBGKOaztq+hjIQ==}
     dev: false
@@ -9318,7 +9343,7 @@ packages:
       debug: 2.6.9
       escape-html: 1.0.3
       http-errors: 1.6.3
-      mime-types: 2.1.31
+      mime-types: 2.1.35
       parseurl: 1.3.3
     transitivePeerDependencies:
       - supports-color
@@ -10217,7 +10242,7 @@ packages:
     dependencies:
       colorette: 2.0.20
       memfs: 3.5.3
-      mime-types: 2.1.31
+      mime-types: 2.1.35
       range-parser: 1.2.1
       schema-utils: 4.2.0
       webpack: 5.88.2
@@ -10332,7 +10357,7 @@ packages:
       graceful-fs: 4.2.11
       json-parse-even-better-errors: 2.3.1
       loader-runner: 4.3.0
-      mime-types: 2.1.31
+      mime-types: 2.1.35
       neo-async: 2.6.2
       schema-utils: 3.3.0
       tapable: 2.2.1
