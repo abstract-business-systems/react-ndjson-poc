@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import getRecords from './services/getRecords';
 import json from './services/json';
 
 const App = () => {
@@ -7,11 +8,11 @@ const App = () => {
 
 	useEffect(() => {
 		(async () => {
-			const url = 'http://192.168.1.6:8080/lineData1GB.json';
+			const url = 'http://192.168.1.6:8080/1GBLineJSONArray.json';
 
 			json.peekHeap();
 
-			const records = await json.getMutatedChunks(url);
+			const records = await getRecords(url, (v) => v + 1);
 
 			json.peekHeap();
 
